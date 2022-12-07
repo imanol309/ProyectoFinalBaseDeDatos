@@ -134,8 +134,21 @@ SELECT nombreAnimal, TipoAnimal, nombreVacuna, numeroVacuna, nombreVeterinario, 
          JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
          JOIN veterinarios AS VT ON A.codigo_veterinatio = VT.codigo_veterinatio
          JOIN servicios AS S ON A.codigo_servicio = S.codigo_servicio
-WHERE A.codigo_animal = 3;
+WHERE A.codigo_animal = 1;
 
+SELECT nombreAnimal, TipoAnimal, nombreVacuna, numeroVacuna, nombreVeterinario, tipoServicio, precioServicio FROM animales_atendidos AS A 
+		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
+         JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
+         JOIN veterinarios AS VT ON A.codigo_veterinatio = VT.codigo_veterinatio
+         JOIN servicios AS S ON A.codigo_servicio = S.codigo_servicio
+WHERE A.codigo_animal = 2;
+
+SELECT nombreAnimal, TipoAnimal, nombreVacuna, numeroVacuna, nombreVeterinario, tipoServicio, precioServicio FROM animales_atendidos AS A 
+		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
+         JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
+         JOIN veterinarios AS VT ON A.codigo_veterinatio = VT.codigo_veterinatio
+         JOIN servicios AS S ON A.codigo_servicio = S.codigo_servicio
+WHERE A.codigo_animal = 3;
 
 INSERT INTO animales_atendidos (nombreAnimal, codigo_tipo_animal, codigo_vacuna, codigo_veterinatio, codigo_servicio)
 VALUES ('Papo', '85TA', '80V', '85VE','85S');
@@ -157,6 +170,20 @@ INSERT INTO `animales_atendidos` (`nombreAnimal`, `codigo_tipo_animal`, `codigo_
 (('Lobo', '85TA', '85V', '85VE', '85S'), ('perro ', '25TA', '22V', '72VE', '75S'), ('Vaca', '966TA', '96V', '333VE', '4S'), );
 
  /*  EJEMPLO: Creacion del comando SELECT para ver la relacion que tiene las diferentes tablas y asi ver todos los datos juntos*/
+SELECT * FROM animales_atendidos AS A 
+		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
+         JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
+         JOIN veterinarios AS VT ON A.codigo_veterinatio = VT.codigo_veterinatio
+         JOIN servicios AS S ON A.codigo_servicio = S.codigo_servicio
+WHERE A.codigo_animal = 1;
+
+SELECT * FROM animales_atendidos AS A 
+		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
+         JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
+         JOIN veterinarios AS VT ON A.codigo_veterinatio = VT.codigo_veterinatio
+         JOIN servicios AS S ON A.codigo_servicio = S.codigo_servicio
+WHERE A.codigo_animal = 2;
+
 SELECT * FROM animales_atendidos AS A 
 		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
          JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
