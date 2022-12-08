@@ -1,4 +1,4 @@
- /*  Creacion de la base de datos principal */
+ /*  Creacion de la base de datos principal que se llamara animales*/
 CREATE DATABASE animales;
 
  /*  Creacion de la tabla animales atendidos, que va tener las diferentes relaciones con las otra tablas*/
@@ -127,7 +127,6 @@ SELECT * FROM animales_atendidos AS A
          JOIN servicios AS S ON A.codigo_servicio = S.codigo_servicio
 WHERE A.codigo_animal = 'example';
 
-
  /*  EJEMPLO: Creacion del comando SELECT para ver la relacion que tiene las diferentes tablas y asi ver que se puede mostrar campos juntos de diferentes tablas*/
 SELECT nombreAnimal, TipoAnimal, nombreVacuna, numeroVacuna, nombreVeterinario, tipoServicio, precioServicio FROM animales_atendidos AS A 
 		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
@@ -169,7 +168,7 @@ INSERT INTO `veterinarios` (`codigo_veterinatio`, `nombreVeterinario`, `especial
 INSERT INTO `animales_atendidos` (`nombreAnimal`, `codigo_tipo_animal`, `codigo_vacuna`, `codigo_veterinatio`, `codigo_servicio`) VALUES
 (('Lobo', '85TA', '85V', '85VE', '85S'), ('perro ', '25TA', '22V', '72VE', '75S'), ('Vaca', '966TA', '96V', '333VE', '4S'), );
 
- /*  EJEMPLO: Creacion del comando SELECT para ver la relacion que tiene las diferentes tablas y asi ver todos los datos juntos*/
+ /*  EJEMPLO: Creacion del comando SELECT para ver la relacion que tiene las diferentes tablas y asi ver TODOS los datos juntos*/
 SELECT * FROM animales_atendidos AS A 
 		 JOIN tipo_de_animal AS T ON A.codigo_tipo_animal = T.codigo_tipo_animal
          JOIN vacunas AS V ON A.codigo_vacuna = V.codigo_vacuna
